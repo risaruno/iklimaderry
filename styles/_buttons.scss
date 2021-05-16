@@ -1,0 +1,51 @@
+@import "variables";
+
+@mixin iconR($var) {
+  @extend %fa-icon;
+  @extend .far;
+  &:before {
+    content: fa-content($var);
+  }
+}
+@mixin iconS($var) {
+  @extend %fa-icon;
+  @extend .fas;
+  &:before {
+    content: fa-content($var);
+  }
+}
+
+.button1 {
+  border: 3px solid white;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+}
+
+.arrow {
+  @extend .button1;
+  @include iconS($fa-var-arrow-down);
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.iconDate {
+  @include iconS(0);
+  &:before {
+    width: 30px;
+    padding: 0 15px;
+    font-size: 1.5rem;
+  }
+  &.dateI {
+    @include iconS($fa-var-calendar-day);
+  }
+  &.timeI {
+    @include iconS($fa-var-clock);
+  }
+  &.locI {
+    @include iconS($fa-var-map-marked-alt);
+  }
+}

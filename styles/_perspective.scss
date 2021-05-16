@@ -1,0 +1,77 @@
+@media (min-width: 1024px) {
+  #couple {
+    .profile {
+      flex: 45%;
+    }
+    .and {
+      flex: 10%;
+    }
+  }
+  #text > div {
+    > div {
+      flex: 50%;
+    }
+  }
+  #healthProtocols .col {
+    flex: 33.33333%;
+    img {
+      width: 30%;
+    }
+  }
+  #gallery .photo {
+    height: 35vh;
+  }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  #couple {
+    .profile {
+      flex: 45%;
+    }
+    .and {
+      flex: 10%;
+    }
+  }
+  #text > div {
+    > div {
+      flex: 50%;
+    }
+  }
+  #healthProtocols .col {
+    flex: 33.33333%;
+    img {
+      width: 30%;
+    }
+  }
+  #gallery .photo {
+    height: 35vh;
+  }
+}
+@media (max-width: 767px) {
+  #couple {
+    .profile {
+      flex: 100%;
+    }
+    .and {
+      flex: 100%;
+      margin: 5vh 0;
+    }
+  }
+  #text > div {
+    .letterText {
+      flex: 100%;
+    }
+    .hero {
+      display: none;
+    }
+  }
+  #healthProtocols .col {
+    flex: 50%;
+    img {
+      width: 40%;
+    }
+  }
+  #gallery .photo {
+    width: 100%;
+    min-height: 35vh;
+  }
+}

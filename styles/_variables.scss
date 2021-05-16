@@ -1,0 +1,110 @@
+@import "../assets/font/fontawesome-free-5.15.2-web/scss/fontawesome.scss";
+@import "../assets/font/fontawesome-free-5.15.2-web/scss/regular.scss";
+@import "../assets/font/fontawesome-free-5.15.2-web/scss/solid.scss";
+
+$fa-font-path: "../assets/font/fontawesome-free-5.15.2-web/webfonts";
+$mainBc: url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash\ 3.png");
+$mainBcColor: #041b29;
+$mainBcBlend: soft-light;
+$secondBgColor: #445263;
+
+$radius: 10px;
+
+$jc1: space-evenly;
+$jc2: space-between;
+$jc3: space-around;
+
+$dvdColor1: #061527;
+$dvdColor2: #18293c;
+$dvdUrl1: "../assets/elem/wavesOpacity1.png";
+$dvdUrl2: "../assets/elem/wavesOpacity2.png";
+
+@mixin flex(
+  $flexd: row,
+  $jcontent: unset,
+  $wrap: nowrap,
+  $aItems: center,
+  $tAlign: center
+) {
+  display: flex;
+  flex-flow: $flexd $wrap;
+  justify-content: $jcontent;
+  align-items: $aItems;
+  text-align: $tAlign;
+}
+
+@mixin flexCenter {
+  min-height: 100vh;
+  height: fit-content;
+  width: 80%;
+  max-width: 1200px;
+  padding: 10vh 0;
+  margin: auto;
+  overflow: hidden;
+  * {
+    z-index: 2;
+  }
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin background(
+  $bColor: #093e5e50,
+  $bUrl: $mainBc,
+  $bBlend: unset,
+  $bPos: center,
+  $bSize: cover,
+  $bRepeat: no-repeat,
+  $bAttc: scroll
+) {
+  background: $bColor $bUrl $bRepeat $bAttc $bPos;
+  background-blend-mode: $mainBcBlend;
+  background-size: $bSize;
+}
+
+@mixin glass($url: "../assets/elem/glass.png") {
+  background-image: url($url);
+  background-size: 100% 100%;
+}
+
+hr {
+  width: 100%;
+  border: white 1px solid;
+  border-radius: 1px;
+  background-color: white;
+  margin: 1vh 0;
+}
+
+@mixin dividerBottom($dvdColor: $dvdColor1) {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to top, $dvdColor 0%, transparent 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    display: inline-block;
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+@mixin dividerTop($dvdUrl: $dvdUrl1) {
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url($dvdUrl);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+  }
+}
