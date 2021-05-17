@@ -133,7 +133,7 @@ $cover: $p8;
 $header1: $p3;
 $header2: $p6;
 
-@mixin font($size, $f: $f1, $var: $size / 9) {
+@mixin font($size: $rem, $f: $f1, $var: $size / 9) {
   font-family: $f;
   @media (min-width: 1024px) {
     font-size: $size;

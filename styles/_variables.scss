@@ -9,10 +9,14 @@ $mainBcBlend: soft-light;
 $secondBgColor: #445263;
 
 $radius: 10px;
+$tTime: 500ms;
 
 $jc1: space-evenly;
 $jc2: space-between;
 $jc3: space-around;
+
+$btnColor1: #2d9cdb;
+$btnColor2: #0945e0;
 
 $dvdColor1: #061527;
 $dvdColor2: #18293c;
@@ -38,9 +42,8 @@ $dvdUrl2: "../assets/elem/wavesOpacity2.png";
   height: fit-content;
   width: 80%;
   max-width: 1200px;
-  padding: 10vh 0;
+  padding: 15vh 0;
   margin: auto;
-  overflow: hidden;
   * {
     z-index: 2;
   }
@@ -64,17 +67,17 @@ $dvdUrl2: "../assets/elem/wavesOpacity2.png";
   background-size: $bSize;
 }
 
-@mixin glass($url: "../assets/elem/glass.png") {
-  background-image: url($url);
-  background-size: 100% 100%;
-}
+.glass {
+  background: linear-gradient(
+    218.99deg,
+    rgba(255, 255, 255, 0.2) 4.42%,
+    rgba(255, 255, 255, 0) 85.6%
+  );
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
 
-hr {
-  width: 100%;
-  border: white 1px solid;
-  border-radius: 1px;
-  background-color: white;
-  margin: 1vh 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @mixin dividerBottom($dvdColor: $dvdColor1) {
@@ -106,5 +109,74 @@ hr {
     display: inline-block;
     width: 100%;
     height: 150px;
+  }
+}
+
+@mixin love($size) {
+  $var: $size / 9;
+  @media (min-width: 1024px) {
+    width: $size;
+    height: $size;
+  }
+  @media (max-width: 1023px) and (min-width: 768px) {
+    width: $size -$var;
+    height: $size - $var;
+  }
+  @media (max-width: 767px) {
+    width: $size - $var * 2;
+    height: $size - $var * 2;
+  }
+}
+
+@mixin coverCouple($size: $cover) {
+  line-height: 1.2;
+  #groom::before {
+    background-image: url("../assets/elem/love.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    @include love($size);
+  }
+}
+
+.hr {
+  width: 100%;
+  border: white 1px solid;
+  border-radius: 1px;
+  background-color: white;
+  margin: 1vh 0;
+  transition: $tTime;
+}
+
+.redPlanet {
+  position: relative;
+  &::before {
+    position: absolute;
+    background-image: url("../assets/elem/Ellipse_Red.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    width: 20vh;
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.bluePlanet {
+  position: relative;
+  &::before {
+    position: absolute;
+    background-image: url("../assets/elem/Ellipse_Blue.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    width: 30vh;
+    height: 30vh;
+    top: 0;
+    right: 0;
   }
 }

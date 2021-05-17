@@ -8,27 +8,64 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-  background-color: $mainBcColor;
-  @include font($rem);
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.content > div {
+html {
+  background-color: $mainBcColor;
+  @include font();
+}
+
+.row {
+  @include flex(row, $jc2, wrap);
+}
+.col {
+  @include flex(column, center, wrap);
+}
+
+#landing > .col {
+  justify-content: space-evenly;
+  .letter {
+    align-self: flex-start;
+    text-align: left;
+    > p {
+      margin-bottom: 3vh;
+    }
+    #guest {
+      font-weight: 800;
+      display: block;
+    }
+  }
+  #open {
+    @extend .buttonBlueish;
+    @include font();
+    font-weight: 700;
+    align-self: center;
+  }
+  .coverName {
+    @include font($header1, $f2);
+    @include coverCouple($header1);
+    align-self: flex-end;
+  }
+}
+
+#content > div,
+#landing {
   color: white;
   z-index: 2;
+  overflow-x: hidden;
   > .row {
-    @include flex(row, $jc2, wrap);
     @include flexCenter();
   }
   > .col {
-    @include flex(column, center, wrap);
     @include flexCenter();
   }
 }
 
 hr {
-  @extend hr;
+  @extend .hr;
 }
 
 #cover {
@@ -39,28 +76,20 @@ hr {
   );
   > div {
     justify-content: $jc2;
+    padding: 5vh 0;
     .headCover {
       @include flex(column, $jc1);
       line-height: 3;
       .coverName {
         @include font($cover, $f2);
-        line-height: 1.2;
-        #groom::before {
-          background-image: url("../assets/elem/love.png");
-          background-size: 100%;
-          background-repeat: no-repeat;
-          display: inline-block;
-          width: 60px;
-          height: 60px;
-          content: "";
-        }
+        @include coverCouple();
       }
     }
     .footCover {
       @include flex(column, space-evenly);
       height: 20vh;
       .saveDate {
-        @extend .button1;
+        @extend .buttonOutline;
       }
       .scroll {
         @extend .arrow;
@@ -85,6 +114,11 @@ hr {
         font-weight: 500;
         line-height: 1.2;
       }
+      &:hover hr {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+      }
     }
     .and {
       @include font($header2);
@@ -104,9 +138,8 @@ hr {
   );
   > div {
     flex-wrap: nowrap;
-    overflow: visible;
     .letterText {
-      @include glass("../assets/elem/glass_text.png");
+      @extend .glass;
       padding: 3% 5%;
       .textTitle {
         @include font($header1, $f1, 6);
@@ -119,8 +152,6 @@ hr {
       }
     }
     .hero {
-      display: flex;
-      align-items: center;
       #imgHero {
         width: 120%;
         z-index: 3;
@@ -140,8 +171,7 @@ hr {
       justify-content: center;
       .akadCard,
       .resepsiCard {
-        @include glass("../assets/elem/glass_date.png");
-        @include flex(column);
+        @extend .glass;
         max-width: 350px;
         width: 100%;
         padding: 5%;
@@ -171,26 +201,33 @@ hr {
               @include flex(row, $aItems: flex-start);
               @extend .iconDate;
               margin-bottom: 1.5rem;
+              width: 100%;
               .desc {
+                width: 80%;
                 font-family: "Poppins";
                 padding-top: 5px;
                 text-align: start;
-                font-weight: 400;
+                font-weight: 300;
               }
             }
           }
           .buttons {
             @include flex(column);
-            font-weight: 300;
             > div {
               margin: 5px;
             }
             .findLocation {
-              @extend .button1;
+              @extend .buttonOutline;
             }
           }
         }
       }
+    }
+    .akad {
+      @extend .redPlanet;
+    }
+    .resepsi {
+      @extend .bluePlanet;
     }
     .countDown {
       @include flex(column, $jc1);
@@ -204,7 +241,7 @@ hr {
         width: 100%;
         .countBox {
           @include flex(column, $jc1);
-          @include glass("../assets/elem/glass_count.png");
+          @extend .glass;
           flex-grow: 1;
           max-width: 70px;
           width: 100%;
@@ -219,7 +256,7 @@ hr {
       }
       .buttons {
         .saveDate {
-          @extend .button1;
+          @extend .buttonOutline;
           margin: 10% 0;
         }
       }
@@ -236,6 +273,17 @@ hr {
       width: 100%;
       .locTitle {
         @include font($header2, $f2);
+      }
+      .locNav {
+        @extend .glass;
+        width: 100%;
+        padding: 1% 0;
+        margin: 1vh 0;
+        opacity: 50%;
+        transition: $tTime;
+        &:hover {
+          opacity: 100%;
+        }
       }
       > iframe {
         width: 100%;
@@ -257,13 +305,17 @@ hr {
       width: 100%;
       .healthCard {
         @include flex(column, space-around);
-        @include glass("../assets/elem/glass_health.png");
+        @extend .glass;
         padding: 2vw 5vw;
         .healthTitle {
           @include font($header1);
         }
         .healthText {
-          padding: 2% 0;
+          hr {
+            background-color: #e69c31;
+            border-color: #e69c31;
+          }
+          margin-bottom: 2%;
           text-align: justify;
         }
         .healthIcons {
@@ -276,7 +328,7 @@ hr {
               @include flex(column);
               margin: 1% 0;
               span {
-                @include font($rem);
+                @include font();
                 padding: 3%;
               }
             }
@@ -335,12 +387,11 @@ hr {
   @include dividerTop($dvdUrl2);
   @include background();
   > div {
-    max-width: 767px;
     .prayTitle {
       @include font($header2, $f2);
     }
     .prayContent {
-      @include glass("../assets/elem/glass_pray.png");
+      @extend .glass;
       @include font($p2);
       text-align: justify;
       padding: 5%;
@@ -351,18 +402,14 @@ hr {
 #wish {
   @include background();
   > div {
-    max-width: 767px;
     .wishCard {
       @include flex(column, $tAlign: left);
-      @include glass("../assets/elem/glass_wish.png");
+      @extend .glass;
       width: 100%;
       padding: 5%;
       .wishTitle {
         @include font($header1);
-        width: 100%;
-      }
-      hr {
-        width: 100%;
+        text-align: center;
       }
       form {
         @include flex(column, $aItems: unset);

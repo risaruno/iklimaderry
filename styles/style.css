@@ -4,8 +4,6 @@
  */
 .fa,
 .fas,
-.arrow,
-#cover > div .footCover .scroll,
 .iconDate,
 #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
@@ -14,6 +12,8 @@
 .iconDate.dateI,
 .iconDate.timeI,
 .iconDate.locI,
+.arrow,
+#cover > div .footCover .scroll,
 .far,
 .fal,
 .fad,
@@ -27,10 +27,10 @@
   line-height: 1;
 }
 
-.arrow, #cover > div .footCover .scroll, .iconDate, #date > div .akad .akadCard .body .dateIcons .dateIcon,
+.iconDate, #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .dateIcon,
-#date > div .resepsi .resepsiCard .body .dateIcons .dateIcon, .iconDate.dateI, .iconDate.timeI, .iconDate.locI {
+#date > div .resepsi .resepsiCard .body .dateIcons .dateIcon, .iconDate.dateI, .iconDate.timeI, .iconDate.locI, .arrow, #cover > div .footCover .scroll {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -133,13 +133,13 @@
 
 .fa.fa-pull-left,
 .fas.fa-pull-left,
-.fa-pull-left.arrow,
-#cover > div .footCover .fa-pull-left.scroll,
 .fa-pull-left.iconDate,
 #date > div .akad .akadCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .resepsi .resepsiCard .body .dateIcons .fa-pull-left.dateIcon,
+.fa-pull-left.arrow,
+#cover > div .footCover .fa-pull-left.scroll,
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
@@ -148,13 +148,13 @@
 
 .fa.fa-pull-right,
 .fas.fa-pull-right,
-.fa-pull-right.arrow,
-#cover > div .footCover .fa-pull-right.scroll,
 .fa-pull-right.iconDate,
 #date > div .akad .akadCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .resepsi .resepsiCard .body .dateIcons .fa-pull-right.dateIcon,
+.fa-pull-right.arrow,
+#cover > div .footCover .fa-pull-right.scroll,
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
@@ -6159,8 +6159,6 @@ readers do not read off random characters that represent icons */
 
 .fa,
 .fas,
-.arrow,
-#cover > div .footCover .scroll,
 .iconDate,
 #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
@@ -6168,17 +6166,67 @@ readers do not read off random characters that represent icons */
 #date > div .resepsi .resepsiCard .body .dateIcons .dateIcon,
 .iconDate.dateI,
 .iconDate.timeI,
-.iconDate.locI {
+.iconDate.locI,
+.arrow,
+#cover > div .footCover .scroll {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
 
-hr {
+.glass, #text > div .letterText, #date > div .akad .akadCard,
+#date > div .akad .resepsiCard,
+#date > div .resepsi .akadCard,
+#date > div .resepsi .resepsiCard, #date > div .countDown .countTimer .countBox, #location > div .loc .locNav, #healthProtocols > div .health .healthCard, #pray > div .prayContent, #wish > div .wishCard {
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0.2) 4.42%, rgba(255, 255, 255, 0) 85.6%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hr, hr {
   width: 100%;
   border: white 1px solid;
   border-radius: 1px;
   background-color: white;
   margin: 1vh 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.redPlanet, #date > div .akad {
+  position: relative;
+}
+
+.redPlanet::before, #date > div .akad::before {
+  position: absolute;
+  background-image: url("../assets/elem/Ellipse_Red.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: "";
+  width: 20vh;
+  height: 20vh;
+  bottom: 0;
+  left: 0;
+}
+
+.bluePlanet, #date > div .resepsi {
+  position: relative;
+}
+
+.bluePlanet::before, #date > div .resepsi::before {
+  position: absolute;
+  background-image: url("../assets/elem/Ellipse_Blue.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: "";
+  width: 30vh;
+  height: 30vh;
+  top: 0;
+  right: 0;
 }
 
 @font-face {
@@ -6318,8 +6366,6 @@ hr {
  */
 .fa,
 .fas,
-.arrow,
-#cover > div .footCover .scroll,
 .iconDate,
 #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
@@ -6328,6 +6374,8 @@ hr {
 .iconDate.dateI,
 .iconDate.timeI,
 .iconDate.locI,
+.arrow,
+#cover > div .footCover .scroll,
 .far,
 .fal,
 .fad,
@@ -6341,10 +6389,10 @@ hr {
   line-height: 1;
 }
 
-.arrow, #cover > div .footCover .scroll, .iconDate, #date > div .akad .akadCard .body .dateIcons .dateIcon,
+.iconDate, #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .dateIcon,
-#date > div .resepsi .resepsiCard .body .dateIcons .dateIcon, .iconDate.dateI, .iconDate.timeI, .iconDate.locI {
+#date > div .resepsi .resepsiCard .body .dateIcons .dateIcon, .iconDate.dateI, .iconDate.timeI, .iconDate.locI, .arrow, #cover > div .footCover .scroll {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -6447,13 +6495,13 @@ hr {
 
 .fa.fa-pull-left,
 .fas.fa-pull-left,
-.fa-pull-left.arrow,
-#cover > div .footCover .fa-pull-left.scroll,
 .fa-pull-left.iconDate,
 #date > div .akad .akadCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .fa-pull-left.dateIcon,
 #date > div .resepsi .resepsiCard .body .dateIcons .fa-pull-left.dateIcon,
+.fa-pull-left.arrow,
+#cover > div .footCover .fa-pull-left.scroll,
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
@@ -6462,13 +6510,13 @@ hr {
 
 .fa.fa-pull-right,
 .fas.fa-pull-right,
-.fa-pull-right.arrow,
-#cover > div .footCover .fa-pull-right.scroll,
 .fa-pull-right.iconDate,
 #date > div .akad .akadCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .resepsi .akadCard .body .dateIcons .fa-pull-right.dateIcon,
 #date > div .resepsi .resepsiCard .body .dateIcons .fa-pull-right.dateIcon,
+.fa-pull-right.arrow,
+#cover > div .footCover .fa-pull-right.scroll,
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
@@ -12462,8 +12510,6 @@ readers do not read off random characters that represent icons */
 
 .fa,
 .fas,
-.arrow,
-#cover > div .footCover .scroll,
 .iconDate,
 #date > div .akad .akadCard .body .dateIcons .dateIcon,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon,
@@ -12471,39 +12517,67 @@ readers do not read off random characters that represent icons */
 #date > div .resepsi .resepsiCard .body .dateIcons .dateIcon,
 .iconDate.dateI,
 .iconDate.timeI,
-.iconDate.locI {
+.iconDate.locI,
+.arrow,
+#cover > div .footCover .scroll {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
 
-hr {
+.glass, #text > div .letterText, #date > div .akad .akadCard,
+#date > div .akad .resepsiCard,
+#date > div .resepsi .akadCard,
+#date > div .resepsi .resepsiCard, #date > div .countDown .countTimer .countBox, #location > div .loc .locNav, #healthProtocols > div .health .healthCard, #pray > div .prayContent, #wish > div .wishCard {
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0.2) 4.42%, rgba(255, 255, 255, 0) 85.6%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hr, hr {
   width: 100%;
   border: white 1px solid;
   border-radius: 1px;
   background-color: white;
   margin: 1vh 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
-.button1, .arrow, #cover > div .footCover .scroll, #cover > div .footCover .saveDate, #date > div .akad .akadCard .body .buttons .findLocation,
-#date > div .akad .resepsiCard .body .buttons .findLocation,
-#date > div .resepsi .akadCard .body .buttons .findLocation,
-#date > div .resepsi .resepsiCard .body .buttons .findLocation, #date > div .countDown .buttons .saveDate {
-  border: 3px solid white;
-  border-radius: 2rem;
-  background-color: transparent;
-  color: white;
-  padding: 10px 15px;
+.redPlanet, #date > div .akad {
+  position: relative;
 }
 
-.arrow, #cover > div .footCover .scroll {
-  width: 50px;
-  height: 50px;
-  font-size: 25px;
-  padding: 10px;
+.redPlanet::before, #date > div .akad::before {
+  position: absolute;
+  background-image: url("../assets/elem/Ellipse_Red.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: "";
+  width: 20vh;
+  height: 20vh;
+  bottom: 0;
+  left: 0;
 }
 
-.arrow:before, #cover > div .footCover .scroll:before {
-  content: "\f063";
+.bluePlanet, #date > div .resepsi {
+  position: relative;
+}
+
+.bluePlanet::before, #date > div .resepsi::before {
+  position: absolute;
+  background-image: url("../assets/elem/Ellipse_Blue.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: "";
+  width: 30vh;
+  height: 30vh;
+  top: 0;
+  right: 0;
 }
 
 .iconDate:before, #date > div .akad .akadCard .body .dateIcons .dateIcon:before,
@@ -12517,9 +12591,8 @@ hr {
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon:before,
 #date > div .resepsi .akadCard .body .dateIcons .dateIcon:before,
 #date > div .resepsi .resepsiCard .body .dateIcons .dateIcon:before {
-  width: 30px;
-  padding: 0 15px;
-  font-size: 1.5rem;
+  width: 20%;
+  font-size: 1.2rem;
 }
 
 .iconDate.dateI:before, #date > div .akad .akadCard .body .dateIcons .dateI.dateIcon:before,
@@ -12543,6 +12616,63 @@ hr {
   content: "\f5a0";
 }
 
+.buttonBlueish, #landing > .col #open {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d9cdb), to(#0945e0));
+  background-image: linear-gradient(to bottom, #2d9cdb 0%, #0945e0 100%);
+  border-radius: 2rem;
+  color: white;
+  padding: 0.5rem 2rem;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.buttonBlueish:hover, #landing > .col #open:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2d9cdb), to(#0945e0));
+  background-image: linear-gradient(to right, #2d9cdb 0%, #0945e0 100%);
+  border: 1px white solid;
+}
+
+.outline, .buttonOutline, #cover > div .footCover .saveDate, #date > div .akad .akadCard .body .buttons .findLocation,
+#date > div .akad .resepsiCard .body .buttons .findLocation,
+#date > div .resepsi .akadCard .body .buttons .findLocation,
+#date > div .resepsi .resepsiCard .body .buttons .findLocation, #date > div .countDown .buttons .saveDate, .arrow, #cover > div .footCover .scroll {
+  border: 2px solid white;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: white;
+  display: block;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.outline:hover, .buttonOutline:hover, #cover > div .footCover .saveDate:hover, #date > div .akad .akadCard .body .buttons .findLocation:hover,
+#date > div .akad .resepsiCard .body .buttons .findLocation:hover,
+#date > div .resepsi .akadCard .body .buttons .findLocation:hover,
+#date > div .resepsi .resepsiCard .body .buttons .findLocation:hover, #date > div .countDown .buttons .saveDate:hover, .arrow:hover, #cover > div .footCover .scroll:hover {
+  background-color: white;
+  color: black;
+}
+
+.buttonOutline, #cover > div .footCover .saveDate, #date > div .akad .akadCard .body .buttons .findLocation,
+#date > div .akad .resepsiCard .body .buttons .findLocation,
+#date > div .resepsi .akadCard .body .buttons .findLocation,
+#date > div .resepsi .resepsiCard .body .buttons .findLocation, #date > div .countDown .buttons .saveDate {
+  padding: 0.5rem 2rem;
+  font-weight: 300;
+}
+
+.arrow, #cover > div .footCover .scroll {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.arrow:before, #cover > div .footCover .scroll:before {
+  content: "\f063";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12550,8 +12680,12 @@ hr {
           box-sizing: border-box;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 html {
-  overflow-x: hidden;
   background-color: #041b29;
   font-family: "Poppins";
 }
@@ -12574,12 +12708,7 @@ html {
   }
 }
 
-.content > div {
-  color: white;
-  z-index: 2;
-}
-
-.content > div > .row {
+.row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12594,25 +12723,9 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  min-height: 100vh;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 80%;
-  max-width: 1200px;
-  padding: 10vh 0;
-  margin: auto;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
-.content > div > .row * {
-  z-index: 2;
-}
-
-.content > div > .col {
+.col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12627,21 +12740,153 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+
+#landing > .col {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#landing > .col .letter {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-align: left;
+}
+
+#landing > .col .letter > p {
+  margin-bottom: 3vh;
+}
+
+#landing > .col .letter #guest {
+  font-weight: 800;
+  display: block;
+}
+
+#landing > .col #open {
+  font-family: "Poppins";
+  font-weight: 700;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (min-width: 1024px) {
+  #landing > .col #open {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #landing > .col #open {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  #landing > .col #open {
+    font-size: 14px;
+  }
+}
+
+#landing > .col .coverName {
+  font-family: "Pacifico";
+  line-height: 1.2;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (min-width: 1024px) {
+  #landing > .col .coverName {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #landing > .col .coverName {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #landing > .col .coverName {
+    font-size: 21px;
+  }
+}
+
+#landing > .col .coverName #groom::before {
+  background-image: url("../assets/elem/love.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: "";
+}
+
+@media (min-width: 1024px) {
+  #landing > .col .coverName #groom::before {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #landing > .col .coverName #groom::before {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #landing > .col .coverName #groom::before {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+#content > div,
+#landing {
+  color: white;
+  z-index: 2;
+  overflow-x: hidden;
+}
+
+#content > div > .row,
+#landing > .row {
   min-height: 100vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 80%;
   max-width: 1200px;
-  padding: 10vh 0;
+  padding: 15vh 0;
   margin: auto;
-  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.content > div > .col * {
+#content > div > .row *,
+#landing > .row * {
+  z-index: 2;
+}
+
+#content > div > .col,
+#landing > .col {
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80%;
+  max-width: 1200px;
+  padding: 15vh 0;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#content > div > .col *,
+#landing > .col * {
   z-index: 2;
 }
 
@@ -12655,6 +12900,7 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 5vh 0;
 }
 
 #cover > div .headCover {
@@ -12703,9 +12949,28 @@ html {
   background-size: 100%;
   background-repeat: no-repeat;
   display: inline-block;
-  width: 60px;
-  height: 60px;
   content: "";
+}
+
+@media (min-width: 1024px) {
+  #cover > div .headCover .coverName #groom::before {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #cover > div .headCover .coverName #groom::before {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  #cover > div .headCover .coverName #groom::before {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 #cover > div .footCover {
@@ -12794,6 +13059,12 @@ html {
   }
 }
 
+#couple > div .profile:hover hr {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 #couple > div .and {
   font-family: "Poppins";
 }
@@ -12854,12 +13125,9 @@ html {
 #text > div {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow: visible;
 }
 
 #text > div .letterText {
-  background-image: url("../assets/elem/glass_text.png");
-  background-size: 100% 100%;
   padding: 3% 5%;
 }
 
@@ -12890,15 +13158,6 @@ html {
 
 #text > div .letterText p {
   text-align: justify;
-}
-
-#text > div .hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #text > div .hero #imgHero {
@@ -12943,22 +13202,6 @@ html {
 #date > div .akad .resepsiCard,
 #date > div .resepsi .akadCard,
 #date > div .resepsi .resepsiCard {
-  background-image: url("../assets/elem/glass_date.png");
-  background-size: 100% 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: unset;
-      -ms-flex-pack: unset;
-          justify-content: unset;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   max-width: 350px;
   width: 100%;
   padding: 5%;
@@ -13090,16 +13333,18 @@ html {
           align-items: flex-start;
   text-align: center;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 #date > div .akad .akadCard .body .dateIcons .dateIcon .desc,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon .desc,
 #date > div .resepsi .akadCard .body .dateIcons .dateIcon .desc,
 #date > div .resepsi .resepsiCard .body .dateIcons .dateIcon .desc {
+  width: 80%;
   font-family: "Poppins";
   padding-top: 5px;
   text-align: start;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #date > div .akad .akadCard .body .buttons,
@@ -13120,7 +13365,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  font-weight: 300;
 }
 
 #date > div .akad .akadCard .body .buttons > div,
@@ -13206,8 +13450,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-image: url("../assets/elem/glass_count.png");
-  background-size: 100% 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -13313,6 +13555,19 @@ html {
   }
 }
 
+#location > div .loc .locNav {
+  width: 100%;
+  padding: 1% 0;
+  margin: 1vh 0;
+  opacity: 50%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#location > div .loc .locNav:hover {
+  opacity: 100%;
+}
+
 #location > div .loc > iframe {
   width: 100%;
   height: 60vh;
@@ -13377,8 +13632,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-image: url("../assets/elem/glass_health.png");
-  background-size: 100% 100%;
   padding: 2vw 5vw;
 }
 
@@ -13405,8 +13658,13 @@ html {
 }
 
 #healthProtocols > div .health .healthCard .healthText {
-  padding: 2% 0;
+  margin-bottom: 2%;
   text-align: justify;
+}
+
+#healthProtocols > div .health .healthCard .healthText hr {
+  background-color: #e69c31;
+  border-color: #e69c31;
 }
 
 #healthProtocols > div .health .healthCard .healthIcons {
@@ -13618,10 +13876,6 @@ html {
   height: 150px;
 }
 
-#pray > div {
-  max-width: 767px;
-}
-
 #pray > div .prayTitle {
   font-family: "Pacifico";
 }
@@ -13645,8 +13899,6 @@ html {
 }
 
 #pray > div .prayContent {
-  background-image: url("../assets/elem/glass_pray.png");
-  background-size: 100% 100%;
   font-family: "Poppins";
   text-align: justify;
   padding: 5%;
@@ -13676,10 +13928,6 @@ html {
   background-size: cover;
 }
 
-#wish > div {
-  max-width: 767px;
-}
-
 #wish > div .wishCard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13695,15 +13943,13 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
-  background-image: url("../assets/elem/glass_wish.png");
-  background-size: 100% 100%;
   width: 100%;
   padding: 5%;
 }
 
 #wish > div .wishCard .wishTitle {
   font-family: "Poppins";
-  width: 100%;
+  text-align: center;
 }
 
 @media (min-width: 1024px) {
@@ -13722,10 +13968,6 @@ html {
   #wish > div .wishCard .wishTitle {
     font-size: 21px;
   }
-}
-
-#wish > div .wishCard hr {
-  width: 100%;
 }
 
 #wish > div .wishCard form {
@@ -13940,8 +14182,7 @@ html {
     width: 40%;
   }
   #gallery .photo {
-    width: 100%;
-    min-height: 35vh;
+    height: 20vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
