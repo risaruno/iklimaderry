@@ -6173,7 +6173,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
-.glass, #text > div .letterText, #date > div .akad .akadCard,
+.glass, #navigator ul li, #text > div .letterText, #date > div .akad .akadCard,
 #date > div .akad .resepsiCard,
 #date > div .resepsi .akadCard,
 #date > div .resepsi .resepsiCard, #date > div .countDown .countTimer .countBox, #location > div .loc .locNav, #healthProtocols > div .health .healthCard, #pray > div .prayContent, #wish > div .wishCard {
@@ -6227,6 +6227,20 @@ readers do not read off random characters that represent icons */
   height: 30vh;
   top: 0;
   right: 0;
+}
+
+#space {
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  width: 1px;
+  height: 1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
 }
 
 @font-face {
@@ -12524,7 +12538,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
-.glass, #text > div .letterText, #date > div .akad .akadCard,
+.glass, #navigator ul li, #text > div .letterText, #date > div .akad .akadCard,
 #date > div .akad .resepsiCard,
 #date > div .resepsi .akadCard,
 #date > div .resepsi .resepsiCard, #date > div .countDown .countTimer .countBox, #location > div .loc .locNav, #healthProtocols > div .health .healthCard, #pray > div .prayContent, #wish > div .wishCard {
@@ -12580,6 +12594,179 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
+#space {
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  width: 1px;
+  height: 1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
+}
+
+#navigator {
+  overflow: hidden;
+  position: fixed;
+  top: 10vh;
+  right: -100px;
+  z-index: 10;
+  font-family: "Poppins";
+}
+
+@media (min-width: 1024px) {
+  #navigator {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #navigator {
+    font-size: 10.66667px;
+  }
+}
+
+@media (max-width: 767px) {
+  #navigator {
+    font-size: 9.33333px;
+  }
+}
+
+#navigator ul {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: center;
+  width: 200px;
+  height: 450px;
+}
+
+#navigator ul li {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: center;
+  color: white;
+  border-radius: 0px;
+  list-style: none;
+  cursor: pointer;
+  width: 120px;
+  height: 75px;
+  border-left: 20px #dca958 solid;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#navigator ul li.health {
+  border-left-color: #00d88a;
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(0, 255, 166, 0.5) 85.6%);
+}
+
+#navigator ul li .navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 5px 20px;
+}
+
+#navigator ul li .navList .icon {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+}
+
+#navigator ul li .navList .desc {
+  text-align: center;
+}
+
+#navigator ul li .navList .desc span {
+  display: block;
+  font-size: 0.8em;
+  line-height: 0.8;
+}
+
+#navigator ul li:hover {
+  width: 200px;
+  border-left-width: 10px;
+}
+
+#navigator ul li.active {
+  width: 200px;
+  border-left-width: 10px;
+}
+
+.icon {
+  height: 60px;
+}
+
+.akadIcon.icon {
+  content: url("../assets/elem/handshake.png");
+}
+
+.resepsiIcon.icon {
+  content: url("../assets/elem/reception.png");
+}
+
+.coverI.icon {
+  content: url("../assets/elem/cover.png");
+}
+
+.coupleI.icon {
+  content: url("../assets/elem/couple.png");
+}
+
+.eventI.icon {
+  content: url("../assets/elem/event.png");
+}
+
+.healthI.icon {
+  content: url("../assets/elem/health.png");
+}
+
+.galleryI.icon {
+  content: url("../assets/elem/gallery.png");
+}
+
+.wishI.icon {
+  content: url("../assets/elem/wish.png");
+}
+
 .iconDate:before, #date > div .akad .akadCard .body .dateIcons .dateIcon:before,
 #date > div .akad .resepsiCard .body .dateIcons .dateIcon:before,
 #date > div .resepsi .akadCard .body .dateIcons .dateIcon:before,
@@ -12617,25 +12804,23 @@ readers do not read off random characters that represent icons */
 }
 
 .buttonBlueish, #landing > .col #open {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d9cdb), to(#0945e0));
-  background-image: linear-gradient(to bottom, #2d9cdb 0%, #0945e0 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(#2d9cdb), color-stop(#0945e0), to(#2d9cdb));
+  background-image: linear-gradient(to left, #2d9cdb, #0945e0, #2d9cdb);
+  background-size: 200%;
   border-radius: 2rem;
   color: white;
+  cursor: pointer;
   padding: 0.5rem 2rem;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
 .buttonBlueish:hover, #landing > .col #open:hover {
-  background-image: -webkit-gradient(linear, left top, right top, from(#2d9cdb), to(#0945e0));
-  background-image: linear-gradient(to right, #2d9cdb 0%, #0945e0 100%);
-  border: 1px white solid;
+  background-position: right;
 }
 
-.outline, .buttonOutline, #cover > div .footCover .saveDate, #date > div .akad .akadCard .body .buttons .findLocation,
-#date > div .akad .resepsiCard .body .buttons .findLocation,
-#date > div .resepsi .akadCard .body .buttons .findLocation,
-#date > div .resepsi .resepsiCard .body .buttons .findLocation, #date > div .countDown .buttons .saveDate, .arrow, #cover > div .footCover .scroll {
+.outline, .buttonOutline, .saveDate,
+.findLocation, .arrow, #cover > div .footCover .scroll {
   border: 2px solid white;
   border-radius: 2rem;
   background-color: transparent;
@@ -12645,18 +12830,14 @@ readers do not read off random characters that represent icons */
   transition: 500ms;
 }
 
-.outline:hover, .buttonOutline:hover, #cover > div .footCover .saveDate:hover, #date > div .akad .akadCard .body .buttons .findLocation:hover,
-#date > div .akad .resepsiCard .body .buttons .findLocation:hover,
-#date > div .resepsi .akadCard .body .buttons .findLocation:hover,
-#date > div .resepsi .resepsiCard .body .buttons .findLocation:hover, #date > div .countDown .buttons .saveDate:hover, .arrow:hover, #cover > div .footCover .scroll:hover {
+.outline:hover, .buttonOutline:hover, .saveDate:hover,
+.findLocation:hover, .arrow:hover, #cover > div .footCover .scroll:hover {
   background-color: white;
   color: black;
 }
 
-.buttonOutline, #cover > div .footCover .saveDate, #date > div .akad .akadCard .body .buttons .findLocation,
-#date > div .akad .resepsiCard .body .buttons .findLocation,
-#date > div .resepsi .akadCard .body .buttons .findLocation,
-#date > div .resepsi .resepsiCard .body .buttons .findLocation, #date > div .countDown .buttons .saveDate {
+.buttonOutline, .saveDate,
+.findLocation {
   padding: 0.5rem 2rem;
   font-weight: 300;
 }
@@ -12667,6 +12848,7 @@ readers do not read off random characters that represent icons */
   padding: 10px;
   font-size: 25px;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .arrow:before, #cover > div .footCover .scroll:before {
@@ -12708,6 +12890,11 @@ html {
   }
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12740,6 +12927,44 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  background-color: #0e3549;
+  overflow: hidden;
+}
+
+#loader img {
+  position: absolute;
+  width: 50vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#landing .col {
+  opacity: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 #landing > .col {
@@ -12814,7 +13039,7 @@ html {
   }
 }
 
-#landing > .col .coverName #groom::before {
+#landing > .col .coverName .groom::before {
   background-image: url("../assets/elem/love.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -12823,24 +13048,33 @@ html {
 }
 
 @media (min-width: 1024px) {
-  #landing > .col .coverName #groom::before {
+  #landing > .col .coverName .groom::before {
     width: 27px;
     height: 27px;
   }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
-  #landing > .col .coverName #groom::before {
+  #landing > .col .coverName .groom::before {
     width: 24px;
     height: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  #landing > .col .coverName #groom::before {
+  #landing > .col .coverName .groom::before {
     width: 21px;
     height: 21px;
   }
+}
+
+#content {
+  background: #093e5e50 url("../assets/bg/space_background.jpg") no-repeat scroll center;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0;
+  overflow-x: hidden;
 }
 
 #content > div,
@@ -12852,6 +13086,7 @@ html {
 
 #content > div > .row,
 #landing > .row {
+  overflow: visible;
   min-height: 100vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -12872,6 +13107,7 @@ html {
 
 #content > div > .col,
 #landing > .col {
+  overflow: visible;
   min-height: 100vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -12891,6 +13127,8 @@ html {
 }
 
 #cover {
+  position: relative;
+  z-index: 1;
   background: #445263 url("../assets/img/VIS00515.JPG") no-repeat scroll 50% 50%;
   background-blend-mode: soft-light;
   background-size: cover;
@@ -12900,7 +13138,8 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 5vh 0;
+  padding: 5vh 0 !important;
+  z-index: 2;
 }
 
 #cover > div .headCover {
@@ -12944,7 +13183,7 @@ html {
   }
 }
 
-#cover > div .headCover .coverName #groom::before {
+#cover > div .headCover .coverName .groom::before {
   background-image: url("../assets/elem/love.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -12953,21 +13192,21 @@ html {
 }
 
 @media (min-width: 1024px) {
-  #cover > div .headCover .coverName #groom::before {
+  #cover > div .headCover .coverName .groom::before {
     width: 72px;
     height: 72px;
   }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
-  #cover > div .headCover .coverName #groom::before {
+  #cover > div .headCover .coverName .groom::before {
     width: 64px;
     height: 64px;
   }
 }
 
 @media (max-width: 767px) {
-  #cover > div .headCover .coverName #groom::before {
+  #cover > div .headCover .coverName .groom::before {
     width: 56px;
     height: 56px;
   }
@@ -12994,9 +13233,6 @@ html {
 #couple {
   position: relative;
   z-index: 1;
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 #couple::after {
@@ -13089,7 +13325,6 @@ html {
 
 #text {
   position: relative;
-  z-index: 1;
   position: relative;
   z-index: 1;
   background: #445263 url("../assets/img/VIS00366.JPG") no-repeat scroll left;
@@ -13167,10 +13402,6 @@ html {
 
 #date {
   position: relative;
-  z-index: 1;
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 #date::before {
@@ -13229,22 +13460,6 @@ html {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-}
-
-#date > div .akad .akadCard .header .akadIcon,
-#date > div .akad .resepsiCard .header .akadIcon,
-#date > div .resepsi .akadCard .header .akadIcon,
-#date > div .resepsi .resepsiCard .header .akadIcon {
-  content: url("../assets/elem/handshake.png");
-  height: 60px;
-}
-
-#date > div .akad .akadCard .header .resepsiIcon,
-#date > div .akad .resepsiCard .header .resepsiIcon,
-#date > div .resepsi .akadCard .header .resepsiIcon,
-#date > div .resepsi .resepsiCard .header .resepsiIcon {
-  content: url("../assets/elem/couple.png");
-  height: 60px;
 }
 
 #date > div .akad .akadCard .header .headTitle,
@@ -13506,12 +13721,6 @@ html {
   margin: 10% 0;
 }
 
-#location {
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
-}
-
 #location > div .loc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13578,9 +13787,6 @@ html {
 #healthProtocols {
   position: relative;
   z-index: 1;
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 #healthProtocols::after {
@@ -13594,10 +13800,6 @@ html {
   display: inline-block;
   width: 100%;
   height: 50vh;
-}
-
-#healthProtocols > div {
-  overflow: visible;
 }
 
 #healthProtocols > div .health {
@@ -13663,8 +13865,8 @@ html {
 }
 
 #healthProtocols > div .health .healthCard .healthText hr {
-  background-color: #e69c31;
-  border-color: #e69c31;
+  background-color: #dca958;
+  border-color: #dca958;
 }
 
 #healthProtocols > div .health .healthCard .healthIcons {
@@ -13748,7 +13950,6 @@ html {
 
 #gallery {
   position: relative;
-  z-index: 1;
   position: relative;
   z-index: 1;
   background: #445263 url("../assets/img/VIS00366.JPG") repeat-y scroll top left;
@@ -13858,10 +14059,6 @@ html {
 
 #pray {
   position: relative;
-  z-index: 1;
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 #pray::before {
@@ -13920,12 +14117,6 @@ html {
   #pray > div .prayContent {
     font-size: 14px;
   }
-}
-
-#wish {
-  background: #093e5e50 url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash 3.png") no-repeat scroll center;
-  background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 #wish > div .wishCard {
@@ -14095,6 +14286,31 @@ html {
   width: 100px;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #dca958;
+}
+
+body.loaded {
+  overflow-y: scroll;
+}
+
+#loader.loaded {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+#landing.loaded .col {
+  opacity: 1;
+}
+
 @media (min-width: 1024px) {
   #couple .profile {
     -webkit-box-flex: 45%;
@@ -14154,6 +14370,67 @@ html {
 }
 
 @media (max-width: 767px) {
+  #navigator {
+    top: unset;
+    right: unset;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+  }
+  #navigator ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  #navigator ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: auto;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 10px #dca958 solid;
+    border-left: 0px;
+  }
+  #navigator ul li.health {
+    border-top-color: #00d88a;
+  }
+  #navigator ul li .navList {
+    padding: 5px 5px;
+  }
+  #navigator ul li .navList .icon {
+    width: 25px;
+    height: 25px;
+  }
+  #navigator ul li:hover {
+    width: auto;
+    border-top-width: 5px;
+    border-left: 0px;
+  }
+  #navigator ul li.active {
+    width: auto;
+    border-top-width: 5px;
+    border-left: 0px;
+  }
+  #cover > .col {
+    padding-bottom: 12vh !important;
+  }
   #couple .profile {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
@@ -14183,6 +14460,9 @@ html {
   }
   #gallery .photo {
     height: 20vh;
+  }
+  #footer {
+    margin-bottom: 10vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

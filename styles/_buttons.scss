@@ -15,6 +15,95 @@
   }
 }
 
+#navigator {
+  overflow: hidden;
+  position: fixed;
+  top: 10vh;
+  right: -100px;
+  z-index: 10;
+  @include font(12px);
+  ul {
+    overflow: hidden;
+    @include flex(column, center, nowrap, flex-end);
+    width: 200px;
+    height: 450px;
+    li {
+      overflow: hidden;
+      @include flex(column, center, nowrap, flex-start);
+      @extend .glass;
+      color: white;
+      border-radius: 0px;
+      list-style: none;
+      cursor: pointer;
+      width: 120px;
+      height: 75px;
+      border-left: 20px $contrast solid;
+      transition: $tTime;
+      &.health {
+        border-left-color: $contrast2;
+        background: linear-gradient(
+          218.99deg,
+          rgba(255, 255, 255, 0) 4.42%,
+          rgba(0, 255, 166, 0.5) 85.6%
+        );
+      }
+      .navList {
+        @include flex(column, center);
+        padding: 5px 20px;
+        .icon {
+          width: 35px;
+          height: 35px;
+          margin: 0;
+        }
+        .desc {
+          text-align: center;
+          span {
+            display: block;
+            font-size: 0.8em;
+            line-height: 0.8;
+          }
+        }
+      }
+      &:hover {
+        width: 200px;
+        border-left-width: 10px;
+      }
+      &.active {
+        width: 200px;
+        border-left-width: 10px;
+      }
+    }
+  }
+}
+
+.icon {
+  height: 60px;
+  &.akadIcon {
+    content: url("../assets/elem/handshake.png");
+  }
+  &.resepsiIcon {
+    content: url("../assets/elem/reception.png");
+  }
+  &.coverI {
+    content: url("../assets/elem/cover.png");
+  }
+  &.coupleI {
+    content: url("../assets/elem/couple.png");
+  }
+  &.eventI {
+    content: url("../assets/elem/event.png");
+  }
+  &.healthI {
+    content: url("../assets/elem/health.png");
+  }
+  &.galleryI {
+    content: url("../assets/elem/gallery.png");
+  }
+  &.wishI {
+    content: url("../assets/elem/wish.png");
+  }
+}
+
 .iconDate {
   @include iconS(0);
   &:before {
@@ -33,14 +122,20 @@
 }
 
 .buttonBlueish {
-  background-image: linear-gradient(to bottom, $btnColor1 0%, $btnColor2 100%);
+  background-image: linear-gradient(
+    to left,
+    $btnColor1,
+    $btnColor2,
+    $btnColor1
+  );
+  background-size: 200%;
   border-radius: 2rem;
   color: white;
+  cursor: pointer;
   padding: 0.5rem 2rem;
   transition: $tTime;
   &:hover {
-    background-image: linear-gradient(to right, $btnColor1 0%, $btnColor2 100%);
-    border: 1px white solid;
+    background-position: right;
   }
 }
 
@@ -71,4 +166,12 @@
   padding: 10px;
   font-size: 25px;
   font-weight: 900;
+  cursor: pointer;
+}
+
+// Classess
+
+.saveDate,
+.findLocation {
+  @extend .buttonOutline;
 }

@@ -1,3 +1,15 @@
+body.loaded {
+  overflow-y: scroll;
+}
+
+#loader.loaded {
+  transform: translateY(-100%);
+}
+
+#landing.loaded .col {
+  opacity: 1;
+}
+
 @media (min-width: 1024px) {
   #couple {
     .profile {
@@ -47,6 +59,52 @@
   }
 }
 @media (max-width: 767px) {
+  #navigator {
+    top: unset;
+    right: unset;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    ul {
+      @include flex(row, center, nowrap, flex-end);
+      width: 100%;
+      height: 100%;
+      li {
+        flex: 1;
+        width: auto;
+        height: 100%;
+        align-items: center;
+        border-top: 10px $contrast solid;
+        border-left: 0px;
+        &.health {
+          border-top-color: $contrast2;
+        }
+        .navList {
+          padding: 5px 5px;
+          .icon {
+            width: 25px;
+            height: 25px;
+          }
+        }
+        &:hover {
+          width: auto;
+          border-top-width: 5px;
+          border-left: 0px;
+        }
+        &.active {
+          width: auto;
+          border-top-width: 5px;
+          border-left: 0px;
+        }
+      }
+    }
+  }
+
+  #cover > .col {
+    padding-bottom: 12vh !important;
+  }
+
   #couple {
     .profile {
       flex: 100%;
@@ -72,5 +130,8 @@
   }
   #gallery .photo {
     height: 20vh;
+  }
+  #footer {
+    margin-bottom: 10vh;
   }
 }

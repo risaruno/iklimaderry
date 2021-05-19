@@ -18,11 +18,49 @@ html {
   @include font();
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .row {
   @include flex(row, $jc2, wrap);
 }
 .col {
   @include flex(column, center, wrap);
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  transition: $tTime;
+  background-color: #0e3549;
+  overflow: hidden;
+  img {
+    position: absolute;
+    width: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  .col {
+    opacity: 0;
+    transition: $tTime;
+  }
 }
 
 #landing > .col {
@@ -51,15 +89,28 @@ html {
   }
 }
 
+.icon {
+  @extend .icon;
+}
+
+#content {
+  @include background();
+  background-attachment: fixed;
+  opacity: 0;
+  overflow-x: hidden;
+}
+
 #content > div,
 #landing {
   color: white;
   z-index: 2;
   overflow-x: hidden;
   > .row {
+    overflow: visible;
     @include flexCenter();
   }
   > .col {
+    overflow: visible;
     @include flexCenter();
   }
 }
@@ -69,6 +120,8 @@ hr {
 }
 
 #cover {
+  position: relative;
+  z-index: 1;
   @include background(
     $secondBgColor,
     url("../assets/img/VIS00515.JPG"),
@@ -76,7 +129,8 @@ hr {
   );
   > div {
     justify-content: $jc2;
-    padding: 5vh 0;
+    padding: 5vh 0 !important;
+    z-index: 2;
     .headCover {
       @include flex(column, $jc1);
       line-height: 3;
@@ -88,9 +142,6 @@ hr {
     .footCover {
       @include flex(column, space-evenly);
       height: 20vh;
-      .saveDate {
-        @extend .buttonOutline;
-      }
       .scroll {
         @extend .arrow;
       }
@@ -100,7 +151,6 @@ hr {
 
 #couple {
   @include dividerBottom();
-  @include background();
   > div {
     .profile {
       @include flex(column);
@@ -162,7 +212,6 @@ hr {
 
 #date {
   @include dividerTop($dvdUrl2);
-  @include background();
   > div {
     .akad,
     .resepsi {
@@ -179,14 +228,6 @@ hr {
         .header {
           @include flex(column);
           flex-grow: 1;
-          .akadIcon {
-            content: url("../assets/elem/handshake.png");
-            height: 60px;
-          }
-          .resepsiIcon {
-            content: url("../assets/elem/couple.png");
-            height: 60px;
-          }
           .headTitle {
             @include font($header2);
             font-weight: 700;
@@ -215,9 +256,6 @@ hr {
             @include flex(column);
             > div {
               margin: 5px;
-            }
-            .findLocation {
-              @extend .buttonOutline;
             }
           }
         }
@@ -256,7 +294,6 @@ hr {
       }
       .buttons {
         .saveDate {
-          @extend .buttonOutline;
           margin: 10% 0;
         }
       }
@@ -265,7 +302,6 @@ hr {
 }
 
 #location {
-  @include background();
   > div {
     .loc {
       @include flex(column, center);
@@ -297,9 +333,7 @@ hr {
 
 #healthProtocols {
   @include dividerBottom();
-  @include background();
   > div {
-    overflow: visible;
     .health {
       @include flex(column, center);
       width: 100%;
@@ -312,8 +346,8 @@ hr {
         }
         .healthText {
           hr {
-            background-color: #e69c31;
-            border-color: #e69c31;
+            background-color: $contrast;
+            border-color: $contrast;
           }
           margin-bottom: 2%;
           text-align: justify;
@@ -385,7 +419,6 @@ hr {
 
 #pray {
   @include dividerTop($dvdUrl2);
-  @include background();
   > div {
     .prayTitle {
       @include font($header2, $f2);
@@ -400,7 +433,6 @@ hr {
 }
 
 #wish {
-  @include background();
   > div {
     .wishCard {
       @include flex(column, $tAlign: left);
@@ -464,6 +496,16 @@ hr {
   img {
     width: 100px;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $contrast;
 }
 
 @import "perspective";

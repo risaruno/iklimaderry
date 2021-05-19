@@ -3,7 +3,7 @@
 @import "../assets/font/fontawesome-free-5.15.2-web/scss/solid.scss";
 
 $fa-font-path: "../assets/font/fontawesome-free-5.15.2-web/webfonts";
-$mainBc: url("../assets/bg/jeremy-thomas-E0AHdsENmDg-unsplash\ 3.png");
+$mainBc: url("../assets/bg/space_background.jpg");
 $mainBcColor: #041b29;
 $mainBcBlend: soft-light;
 $secondBgColor: #445263;
@@ -17,6 +17,9 @@ $jc3: space-around;
 
 $btnColor1: #2d9cdb;
 $btnColor2: #0945e0;
+
+$contrast: #dca958;
+$contrast2: #00d88a;
 
 $dvdColor1: #061527;
 $dvdColor2: #18293c;
@@ -98,7 +101,6 @@ $dvdUrl2: "../assets/elem/wavesOpacity2.png";
 
 @mixin dividerTop($dvdUrl: $dvdUrl1) {
   position: relative;
-  z-index: 1;
   &::before {
     content: "";
     position: absolute;
@@ -130,7 +132,7 @@ $dvdUrl2: "../assets/elem/wavesOpacity2.png";
 
 @mixin coverCouple($size: $cover) {
   line-height: 1.2;
-  #groom::before {
+  .groom::before {
     background-image: url("../assets/elem/love.png");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -179,4 +181,17 @@ $dvdUrl2: "../assets/elem/wavesOpacity2.png";
     top: 0;
     right: 0;
   }
+}
+
+#space {
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  width: 1px;
+  height: 1px;
+  transform: rotate(45deg);
+  z-index: 1;
 }
