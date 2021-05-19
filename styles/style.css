@@ -12865,6 +12865,7 @@ readers do not read off random characters that represent icons */
   text-align: center;
   -webkit-transition: 500ms;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .audio:hover {
