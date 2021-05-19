@@ -175,3 +175,57 @@
 .findLocation {
   @extend .buttonOutline;
 }
+
+//Audio Button
+
+.audio {
+  position: fixed;
+  top: 1vh;
+  right: 1vh;
+  z-index: 5;
+  border-radius: 50%;
+  @extend .glass;
+  color: white;
+  text-align: center;
+  transition: 500ms;
+}
+
+.audio:hover {
+  background-color: white;
+  color: #000;
+  text-align: center;
+}
+
+.audio i {
+  align-self: center;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.scaleUp {
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    z-index: 3;
+  }
+}
+
+.round {
+  animation-name: circle;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  transition: ease-in-out;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

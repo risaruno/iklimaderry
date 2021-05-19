@@ -13,6 +13,14 @@
     <title>Iklima & Derry | Kahfiart</title>
   </head>
   <body id="body">
+    <div class="audio" id="audio-btn">
+      <audio
+        src="assets/audio/La La Land Soundtrack - Epilogue (Justin Hurwitz).mp3"
+        loop
+        id="audio"
+      ></audio>
+      <i class="fas fa-music" id="audio-icon"></i>
+    </div>
     <div id="loader">
       <div class="col">
         <img src="/assets/bg/Loading.gif" />
@@ -71,7 +79,7 @@
               <div class="desc">Gallery</div>
             </div>
           </li>
-          <li data-target="pray">
+          <li data-target="wish">
             <div class="navList wish">
               <div class="icon wishI"></div>
               <div class="desc">Wish</div>
@@ -345,44 +353,44 @@
           </ul>
         </div>
       </div>
-      <div id="pray">
-        <div class="col">
-          <div class="prayTitle">Our Pray</div>
-          <div class="prayContent">
-            "Dan di antara ayat-ayat-Nya ialah Dia menciptakan untukmu
-            istri-istri dari jenismu sendiri, supaya kamu merasa nyaman
-            kepadanya, dan dijadikan-Nya di antaramu mawadah dan rahmah.
-            Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
-            bagi kaum yang berpikir."<br />
-            (Q.S Ar-Rum:21)
-          </div>
-        </div>
-      </div>
       <div id="wish">
         <div class="col">
-          <div class="wishCard">
-            <div class="wishTitle">Wish and Pray</div>
-            <form action="#" method="post">
-              <div class="formGroup">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Enter Your Name"
-                />
-              </div>
-              <div class="formGroup">
-                <label for="wish">Wish</label>
-                <textarea
-                  name="wish"
-                  id="wish"
-                  rows="5"
-                  placeholder="Enter a wish"
-                ></textarea>
-              </div>
-              <button>Send</button>
-            </form>
+          <div class="pray">
+            <div class="prayTitle">Our Pray</div>
+            <div class="prayContent">
+              "Dan di antara ayat-ayat-Nya ialah Dia menciptakan untukmu
+              istri-istri dari jenismu sendiri, supaya kamu merasa nyaman
+              kepadanya, dan dijadikan-Nya di antaramu mawadah dan rahmah.
+              Sesungguhnya pada yang demikian itu benar-benar terdapat
+              tanda-tanda bagi kaum yang berpikir."<br />
+              (Q.S Ar-Rum:21)
+            </div>
+          </div>
+          <div class="wishes">
+            <div class="wishCard">
+              <div class="wishTitle">Wish and Pray</div>
+              <form action="#" method="post">
+                <div class="formGroup">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter Your Name"
+                  />
+                </div>
+                <div class="formGroup">
+                  <label for="wish">Wish</label>
+                  <textarea
+                    name="wish"
+                    id="wish"
+                    rows="5"
+                    placeholder="Enter a wish"
+                  ></textarea>
+                </div>
+                <button>Send</button>
+              </form>
+            </div>
           </div>
           <div class="thankyou">
             Terima Kasih

@@ -9,9 +9,14 @@ load = () => {
   const vh = window.innerHeight;
   const bh = body.clientHeight;
 
+  var audio = document.getElementById("audio");
+  var aBtn = document.getElementById("audio-btn");
+  var aIcon = document.getElementById("audio-icon");
+
   // Loader Loaded
   setTimeout(() => {
     window.scrollTo(0, 0);
+    aBtn.style.opacity = 0;
     loader.classList.add("loaded");
     landing.classList.add("loaded");
   }, 1000);
@@ -59,13 +64,14 @@ load = () => {
   document.getElementById("open").addEventListener(
     "click",
     (open = () => {
-      var landing = document.getElementById("landing");
+      //Timeline
       var tml = gsap.timeline({ duration: 1 });
       tml.defaultEase = "sine.in";
       content.style.visibillity = "visible";
       tml.to(content, 0, { opacity: 0 });
       tml.to(landing, { opacity: 0 });
       tml.to(space, { opacity: 0 });
+
       setTimeout(() => {
         //Reassamble Stars
         const star = document.querySelectorAll(".star");
@@ -93,8 +99,12 @@ load = () => {
           tl[i].to(star[i], { scaleX: 120, x: 50, y: 50 });
           tl[i].to(star[i], { scaleX: 1, x: 100, y: 100 });
         }
-        body.classList.add("loaded");
       }, 2000);
+
+      aBtn.addEventListener("click", stopAudio);
+      playAudio();
+      tml.to(aBtn, 1, { opacity: 1 });
+      body.classList.add("loaded");
       tml.to(content, { opacity: 1 });
       tml.to(space, { opacity: 1 });
     })
@@ -119,9 +129,6 @@ load = () => {
     switch (end) {
       case "text":
         end = "location";
-        break;
-      case "pray":
-        end = "wish";
         break;
       default:
         end = attr;
@@ -184,11 +191,11 @@ load = () => {
       trigger: document.querySelector(".healthCard"),
     },
     {
-      trigger: document.querySelector("#pray>.col"),
+      trigger: document.querySelector(".pray"),
       y: -200,
     },
     {
-      trigger: document.querySelector(".wishCard"),
+      trigger: document.querySelector(".wishes"),
       y: 200,
     },
     {
@@ -206,7 +213,6 @@ load = () => {
           trigger: t,
           start: "top bottom",
           end: "center center",
-          scrub: 1,
           duration: 1,
           ease: "power3.inOut",
         },
@@ -236,5 +242,22 @@ load = () => {
     document.querySelector(".minute").innerHTML = minutes;
     document.querySelector(".second").innerHTML = seconds;
   }, 1000);
+
+  // AUDIO CONTROL //
+
+  function playAudio() {
+    audio.play();
+    aBtn.removeEventListener("click", playAudio);
+    aBtn.addEventListener("click", stopAudio);
+    aIcon.className = "fas fa-music";
+  }
+
+  function stopAudio() {
+    audio.pause();
+    audio.currentTime = 0;
+    aBtn.removeEventListener("click", stopAudio);
+    aBtn.addEventListener("click", playAudio);
+    aIcon.className = "fas fa-volume-mute";
+  }
 };
 document.addEventListener("DOMContentLoaded", load);
