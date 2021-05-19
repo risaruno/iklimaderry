@@ -142,9 +142,6 @@ hr {
     .footCover {
       @include flex(column, space-evenly);
       height: 20vh;
-      .saveDate {
-        margin-bottom: 1vh;
-      }
       .scroll {
         @extend .arrow;
       }

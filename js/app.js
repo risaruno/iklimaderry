@@ -19,7 +19,7 @@ load = () => {
     aBtn.style.opacity = 0;
     loader.classList.add("loaded");
     landing.classList.add("loaded");
-  }, 6000);
+  }, 1000);
 
   //Random Number Function
   random = (min = 1, max = 10, precision = 1) => {
