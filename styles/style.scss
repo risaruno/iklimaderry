@@ -141,7 +141,7 @@ hr {
     }
     .footCover {
       @include flex(column, space-evenly);
-      height: 20vh;
+      height: 25vh;
       .scroll {
         @extend .arrow;
       }
