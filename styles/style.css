@@ -13306,6 +13306,10 @@ body {
   height: 20vh;
 }
 
+#cover > div .footCover .saveDate {
+  margin-bottom: 1vh;
+}
+
 #couple {
   position: relative;
   z-index: 1;
