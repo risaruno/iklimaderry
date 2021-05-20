@@ -12682,8 +12682,25 @@ readers do not read off random characters that represent icons */
   transition: 500ms;
 }
 
+#navigator ul li:hover {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  width: 200px;
+  border-left-width: 10px;
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(255, 255, 255, 0.2) 85.6%);
+}
+
+#navigator ul li.active {
+  width: 200px;
+  border-left-width: 10px;
+}
+
 #navigator ul li.health {
   border-left-color: #00d88a;
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(0, 255, 166, 0.2) 85.6%);
+}
+
+#navigator ul li.health:hover {
   background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(0, 255, 166, 0.5) 85.6%);
 }
 
@@ -12719,16 +12736,6 @@ readers do not read off random characters that represent icons */
   display: block;
   font-size: 0.8em;
   line-height: 0.8;
-}
-
-#navigator ul li:hover {
-  width: 200px;
-  border-left-width: 10px;
-}
-
-#navigator ul li.active {
-  width: 200px;
-  border-left-width: 10px;
 }
 
 .icon {
@@ -12803,11 +12810,12 @@ readers do not read off random characters that represent icons */
   content: "\f5a0";
 }
 
-.buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard form button {
+.buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard #wish-form button {
   background-image: -webkit-gradient(linear, right top, left top, from(#2d9cdb), color-stop(#0945e0), to(#2d9cdb));
   background-image: linear-gradient(to left, #2d9cdb, #0945e0, #2d9cdb);
   background-size: 200%;
   border-radius: 2rem;
+  border: 0px;
   color: white;
   cursor: pointer;
   padding: 0.5rem 2rem;
@@ -12815,7 +12823,7 @@ readers do not read off random characters that represent icons */
   transition: 500ms;
 }
 
-.buttonBlueish:hover, #landing > .col #open:hover, #wish > div #landing > .pray #open:hover, #wish > div #landing > .wishes #open:hover, #wish > div .wishes .wishCard form button:hover {
+.buttonBlueish:hover, #landing > .col #open:hover, #wish > div #landing > .pray #open:hover, #wish > div #landing > .wishes #open:hover, #wish > div .wishes .wishCard #wish-form button:hover {
   background-position: right;
 }
 
@@ -12882,12 +12890,19 @@ readers do not read off random characters that represent icons */
   padding: 15px;
 }
 
+.scaleUp, #gallery > div .photos .photo, #footer a img {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
 .scaleUp:hover, #gallery > div .photos .photo:hover, #footer a img:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   z-index: 3;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .round, #footer a img {
@@ -13016,7 +13031,7 @@ body {
   z-index: 99;
   -webkit-transition: 500ms;
   transition: 500ms;
-  background-color: #0e3549;
+  background-color: #0d3448;
   overflow: hidden;
 }
 
@@ -14108,8 +14123,6 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   list-style-type: none;
-  -webkit-transition: 500ms;
-  transition: 500ms;
 }
 
 #gallery > div .photos .photo > img {
@@ -14244,7 +14257,7 @@ body {
   }
 }
 
-#wish > div .wishes .wishCard form {
+#wish > div .wishes .wishCard #wish-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14260,14 +14273,15 @@ body {
           align-items: unset;
   text-align: center;
   width: 100%;
+  height: 50vh;
   padding: 10px 0;
 }
 
-#wish > div .wishes .wishCard form > * {
+#wish > div .wishes .wishCard #wish-form > * {
   margin: 5px 0;
 }
 
-#wish > div .wishes .wishCard form .formGroup {
+#wish > div .wishes .wishCard #wish-form .formGroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14284,27 +14298,67 @@ body {
   text-align: left;
 }
 
-#wish > div .wishes .wishCard form .formGroup label {
+#wish > div .wishes .wishCard #wish-form .formGroup label {
   padding-bottom: 5px;
 }
 
-#wish > div .wishes .wishCard form .formGroup input,
-#wish > div .wishes .wishCard form .formGroup textarea {
+#wish > div .wishes .wishCard #wish-form .formGroup input,
+#wish > div .wishes .wishCard #wish-form .formGroup textarea {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
+  border: 2px transparent solid;
 }
 
-#wish > div .wishes .wishCard form .formGroup textarea {
+#wish > div .wishes .wishCard #wish-form .formGroup input.is-invalid,
+#wish > div .wishes .wishCard #wish-form .formGroup textarea.is-invalid {
+  border-color: #ff3131;
+}
+
+#wish > div .wishes .wishCard #wish-form .formGroup textarea {
   resize: none;
   font-family: "Poppins";
 }
 
-#wish > div .wishes .wishCard form button {
+#wish > div .wishes .wishCard #wish-form .formGroup .error {
+  color: #ff3131;
+}
+
+#wish > div .wishes .wishCard #wish-form button {
   width: 80px;
   height: 40px;
   padding: 0 10px;
   border-radius: 10px;
+}
+
+#wish > div .wishes .wishCard #wish-form .after-form {
+  font-family: "Poppins";
+}
+
+@media (min-width: 1024px) {
+  #wish > div .wishes .wishCard #wish-form .after-form {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #wish > div .wishes .wishCard #wish-form .after-form {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #wish > div .wishes .wishCard #wish-form .after-form {
+    font-size: 21px;
+  }
+}
+
+#wish > div .wishes .wishCard #wish-form .after-form.form-success > div > i {
+  color: #42ff68;
+}
+
+#wish > div .wishes .wishCard #wish-form .after-form.form-fail > div > i {
+  color: #ff3131;
 }
 
 #wish > div .thankyou {
@@ -14369,6 +14423,7 @@ body {
 #footer a img {
   width: 100px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 body::-webkit-scrollbar {

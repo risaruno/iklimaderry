@@ -64,6 +64,11 @@ load = () => {
   document.getElementById("open").addEventListener(
     "click",
     (open = () => {
+      function removeEl() {
+        loader.remove();
+        landing.remove();
+      }
+
       //Timeline
       var tml = gsap.timeline({ duration: 1 });
       tml.defaultEase = "sine.in";
@@ -99,6 +104,7 @@ load = () => {
           tl[i].to(star[i], { scaleX: 120, x: 50, y: 50 });
           tl[i].to(star[i], { scaleX: 1, x: 100, y: 100 });
         }
+        removeEl();
       }, 2000);
 
       aBtn.addEventListener("click", stopAudio);
@@ -181,8 +187,6 @@ load = () => {
     },
     {
       trigger: document.querySelector(".countDown"),
-      x: 0,
-      y: 100,
     },
     {
       trigger: document.querySelector(".loc"),
@@ -192,11 +196,9 @@ load = () => {
     },
     {
       trigger: document.querySelector(".pray"),
-      y: -200,
     },
     {
       trigger: document.querySelector(".wishes"),
-      y: 200,
     },
     {
       trigger: document.querySelector(".thankyou"),
@@ -211,14 +213,13 @@ load = () => {
       .timeline({
         scrollTrigger: {
           trigger: t,
-          start: "top bottom",
-          end: "center center",
-          duration: 1,
+          start: "top 80%",
           ease: "power3.inOut",
         },
       })
       .fromTo(
         t,
+        2,
         { x: xX, y: yY, opacity: (oP = true ? 0 : 1) },
         { x: 0, y: 0, opacity: 1 }
       );
@@ -244,12 +245,22 @@ load = () => {
   }, 1000);
 
   // AUDIO CONTROL //
+  function playOnHold() {
+    if (document.hidden) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  }
 
   function playAudio() {
     audio.play();
     aBtn.removeEventListener("click", playAudio);
     aBtn.addEventListener("click", stopAudio);
     aIcon.className = "fas fa-music";
+
+    //Disable background playing - add Listener
+    document.addEventListener("visibilitychange", playOnHold);
   }
 
   function stopAudio() {
@@ -258,6 +269,9 @@ load = () => {
     aBtn.removeEventListener("click", stopAudio);
     aBtn.addEventListener("click", playAudio);
     aIcon.className = "fas fa-volume-mute";
+
+    //Disable background playing - Remove Listener
+    document.removeEventListener("visibilitychange", playOnHold);
   }
 };
 document.addEventListener("DOMContentLoaded", load);

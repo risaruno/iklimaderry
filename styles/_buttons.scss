@@ -39,13 +39,34 @@
       height: 75px;
       border-left: 20px $contrast solid;
       transition: $tTime;
+      &:hover {
+        transition: $tTime;
+        width: 200px;
+        border-left-width: 10px;
+        background: linear-gradient(
+          218.99deg,
+          rgba(255, 255, 255, 0) 4.42%,
+          rgba(255, 255, 255, 0.2) 85.6%
+        );
+      }
+      &.active {
+        width: 200px;
+        border-left-width: 10px;
+      }
       &.health {
         border-left-color: $contrast2;
         background: linear-gradient(
           218.99deg,
           rgba(255, 255, 255, 0) 4.42%,
-          rgba(0, 255, 166, 0.5) 85.6%
+          rgba(0, 255, 166, 0.2) 85.6%
         );
+        &:hover {
+          background: linear-gradient(
+            218.99deg,
+            rgba(255, 255, 255, 0) 4.42%,
+            rgba(0, 255, 166, 0.5) 85.6%
+          );
+        }
       }
       .navList {
         @include flex(column, center);
@@ -63,14 +84,6 @@
             line-height: 0.8;
           }
         }
-      }
-      &:hover {
-        width: 200px;
-        border-left-width: 10px;
-      }
-      &.active {
-        width: 200px;
-        border-left-width: 10px;
       }
     }
   }
@@ -130,6 +143,7 @@
   );
   background-size: 200%;
   border-radius: 2rem;
+  border: 0px;
   color: white;
   cursor: pointer;
   padding: 0.5rem 2rem;
@@ -204,10 +218,12 @@
 }
 
 .scaleUp {
+  transition: $tTime;
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
     z-index: 3;
+    transition: $tTime;
   }
 }
 
