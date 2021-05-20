@@ -320,34 +320,34 @@
           <ul class="photos">
             <hr />
             <li class="photo">
-              <img src="./assets/img/VIS00533.JPG" alt="Gallery image 6" />
+              <img src="./assets/img/VIS00533.JPG" alt="Gallery image 1" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00547.JPG" alt="Gallery image 7" />
+              <img src="./assets/img/VIS00547.JPG" alt="Gallery image 2" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00485.JPG" alt="Gallery image 9" />
+              <img src="./assets/img/VIS00485.JPG" alt="Gallery image 3" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00505.JPG" alt="Gallery image 10" />
+              <img src="./assets/img/VIS00505.JPG" alt="Gallery image 4" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00568.JPG" alt="Gallery image 8" />
+              <img src="./assets/img/VIS00568.JPG" alt="Gallery image 5" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00448.JPG" alt="Gallery image 2" />
+              <img src="./assets/img/VIS00448.JPG" alt="Gallery image 6" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00377.JPG" alt="Gallery image 1" />
+              <img src="./assets/img/VIS00404.JPG" alt="Gallery image 7" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00445.JPG" alt="Gallery image 3" />
+              <img src="./assets/img/VIS00445.JPG" alt="Gallery image 8" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00404.JPG" alt="Gallery image 4" />
+              <img src="./assets/img/VIS00377.JPG" alt="Gallery image 9" />
             </li>
             <li class="photo">
-              <img src="./assets/img/VIS00470.JPG" alt="Gallery image 5" />
+              <img src="./assets/img/VIS00470.JPG" alt="Gallery image 10" />
             </li>
             <li></li>
           </ul>
