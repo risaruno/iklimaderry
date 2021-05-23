@@ -15,7 +15,7 @@
   <body id="body">
     <div class="audio" id="audio-btn">
       <audio
-        src="assets/audio/La La Land Soundtrack - Epilogue (Justin Hurwitz).mp3"
+        src="assets/audio/Di Sepertiga Malam Rey Mbayang saxophone cover by Yohanes Arsadewa.mp3"
         loop
         id="audio"
       ></audio>
@@ -117,7 +117,7 @@
             <div class="name">Iklima<br />Dwi Palupi</div>
             <div class="parents">
               <hr />
-              Putri Kedua dari Ponimin Kharis S<br />dan Ibu Endang Setyowati
+              Putri Kedua dari Bapak Ponimin Kharis S<br />dan Ibu Endang Setyowati
             </div>
           </div>
           <div class="and">&</div>
@@ -138,7 +138,7 @@
           <div class="letterText">
             <div class="textTitle">Bismillahirohmanirohim</div>
             <p>
-              Maha Suci Allah SWT yang telah menciptakan makhluk-Nya
+              Maha Suci Allah Subhanahu Wata'ala yang telah menciptakan makhluk-Nya
               berpasang-pasangan. Ya Allah, Perkenankanlah kami untuk menikahkan
               putra-putri kami. Untuk melakukan syariat agama-Mu & mengikuti
               sunnah Nabi Muhammad SAW dalam membentuk keluarga yang Sakinah Ma
@@ -267,8 +267,8 @@
                 <hr />
                 Tanpa mengurangi rasa hormat, kami menghimbau kepada para tamu
                 undangan untuk mematuhi protokol kesehatan dengan baik saat
-                berada di lokasi acara. Hal-hal yang perlu diperhatikan sebagaai
-                berikut.
+                berada di lokasi acara. Hal-hal yang perlu diperhatikan sebagai
+                berikut:
               </div>
               <div class="healthIcons">
                 <div class="row">
@@ -317,40 +317,17 @@
       <div id="gallery">
         <div class="col">
           <div class="galleryTitle">Gallery</div>
-          <ul class="photos">
+          <div class="photos">
             <hr />
-            <li class="photo">
-              <img src="./assets/img/VIS00533.JPG" alt="Gallery image 1" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00547.JPG" alt="Gallery image 2" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00485.JPG" alt="Gallery image 3" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00505.JPG" alt="Gallery image 4" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00568.JPG" alt="Gallery image 5" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00448.JPG" alt="Gallery image 6" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00404.JPG" alt="Gallery image 7" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00445.JPG" alt="Gallery image 8" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00377.JPG" alt="Gallery image 9" />
-            </li>
-            <li class="photo">
-              <img src="./assets/img/VIS00470.JPG" alt="Gallery image 10" />
-            </li>
-            <li></li>
-          </ul>
+            <img src="./assets/img/VIS00566.JPG" alt="Gallery image 1" />
+            <img src="./assets/img/VIS00547.JPG" alt="Gallery image 2" />
+            <img src="./assets/img/VIS00485.JPG" alt="Gallery image 3" />
+            <img src="./assets/img/VIS00505.JPG" alt="Gallery image 4" />
+            <img src="./assets/img/VIS00568.JPG" alt="Gallery image 5" />
+            <img src="./assets/img/VIS00448.JPG" alt="Gallery image 6" />
+            <img src="./assets/img/VIS00445.JPG" alt="Gallery image 7" />
+            <img src="./assets/img/VIS00470.JPG" alt="Gallery image 8" />
+          </div>
         </div>
       </div>
       <div id="wish">
@@ -369,7 +346,12 @@
           <div class="wishes">
             <div class="wishCard">
               <div class="wishTitle">Wish and Pray</div>
-              <form id="wish-form" class="wish-form needs-validation" novalidate>
+              <form
+                id="wish-form"
+                class="wish-form needs-validation"
+                method="post"
+                novalidate
+              >
                 <div class="formGroup">
                   <label for="name">Nama</label>
                   <input
@@ -413,7 +395,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/CSSRulePlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
   <script src="./js/ajax.js"></script>
   <script src="./js/app.js"></script>

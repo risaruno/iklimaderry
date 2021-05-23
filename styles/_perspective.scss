@@ -30,7 +30,7 @@ body.loaded {
       width: 30%;
     }
   }
-  #gallery .photo {
+  #gallery img {
     width: 50%;
     height: 60vh;
   }
@@ -55,7 +55,7 @@ body.loaded {
       width: 30%;
     }
   }
-  #gallery .photo {
+  #gallery img {
     width: 50%;
     height: 50vh;
   }
@@ -77,7 +77,6 @@ body.loaded {
         width: auto;
         height: 100%;
         align-items: center;
-        border-top: 10px $contrast solid;
         border-left: 0px;
         &.health {
           border-top-color: $contrast2;
@@ -91,12 +90,10 @@ body.loaded {
         }
         &:hover {
           width: auto;
-          border-top-width: 5px;
           border-left: 0px;
         }
         &.active {
           width: auto;
-          border-top-width: 5px;
           border-left: 0px;
         }
       }
@@ -130,18 +127,11 @@ body.loaded {
       width: 40%;
     }
   }
-  #gallery .photo {
-    width: 50%;
+  #gallery img {
+    width: 100%;
     height: 50vh;
   }
   #footer {
     margin-bottom: 10vh;
-  }
-}
-
-@media (max-width: 480px) {
-  #gallery .photo {
-    width: 100%;
-    height: 40vh;
   }
 }

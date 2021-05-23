@@ -21,6 +21,18 @@ load = () => {
     landing.classList.add("loaded");
   }, 5000);
 
+  // GUEST NAME
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var guestBox = document.querySelectorAll("#guest");
+  var guest = urlParams.get("guest");
+  if (guest != null) {
+    guestBox.forEach(function (e) {
+      e.innerHTML = guest;
+      e.value = guest;
+    });
+  }
+
   //Random Number Function
   random = (min = 1, max = 10, precision = 1) => {
     return (

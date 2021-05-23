@@ -16,6 +16,7 @@ a {
 html {
   background-color: $mainBcColor;
   @include font();
+  color: white;
 }
 
 body {
@@ -78,8 +79,6 @@ body {
   }
   #open {
     @extend .buttonBlueish;
-    @include font();
-    font-weight: 700;
     align-self: center;
   }
   .coverName {
@@ -102,7 +101,6 @@ body {
 
 #content > div,
 #landing {
-  color: white;
   z-index: 2;
   overflow-x: hidden;
   > .row {
@@ -246,7 +244,6 @@ hr {
               .desc {
                 width: 80%;
                 font-family: "Poppins";
-                padding-top: 5px;
                 text-align: start;
                 font-weight: 300;
                 line-height: normal;
@@ -395,18 +392,9 @@ hr {
       }
       @include flex(row, unset, wrap);
       width: 100%;
-      .photo {
-        flex-grow: 1;
-        list-style-type: none;
-        > img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          vertical-align: bottom;
-        }
-        &:last-child {
-          flex-grow: 10;
-        }
+      img {
+        object-fit: cover;
+        vertical-align: bottom;
         @extend .scaleUp;
       }
     }
@@ -447,7 +435,7 @@ hr {
         #wish-form {
           @include flex(column, $aItems: unset);
           width: 100%;
-          height: 50vh;
+          height: 60vh;
           padding: 10px 0;
           > * {
             margin: 5px 0;
@@ -478,9 +466,7 @@ hr {
           button {
             @extend .buttonBlueish;
             width: 100%;
-            height: 40px;
-            padding: 0 10px;
-            border-radius: $radius;
+            height: 50px;
           }
           .after-form {
             @include font($header1);
@@ -536,3 +522,4 @@ body::-webkit-scrollbar-thumb {
 }
 
 @import "perspective";
+//@import "messages";

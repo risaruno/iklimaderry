@@ -1,0 +1,44 @@
+@import "variables";
+@import "fonts";
+
+html {
+  background-color: $mainBcColor;
+  @include font();
+  color: white;
+}
+
+body#m-body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#content-messages {
+  > .title {
+    @include font($header2);
+    text-align: center;
+    margin: 5%;
+  }
+  > #messages {
+    @include flex(column);
+    > .message {
+      @include flex(column, $jc2, nowrap, flex-start);
+      @extend .glass;
+      //border-radius: $radius;
+      width: 100%;
+      max-width: 70vw;
+      min-height: 30vh;
+      padding: 3% 5%;
+      margin: 1vh 0;
+      .m-name {
+        @include font($header1);
+      }
+      .m-wish {
+        text-align: justify;
+        word-break: break-all;
+      }
+      .m-date {
+        align-self: flex-end;
+      }
+    }
+  }
+}

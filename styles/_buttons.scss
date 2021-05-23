@@ -37,12 +37,12 @@
       cursor: pointer;
       width: 120px;
       height: 75px;
-      border-left: 20px $contrast solid;
+      border-radius: $radius;
       transition: $tTime;
       &:hover {
+        border-radius: $radius;
         transition: $tTime;
         width: 200px;
-        border-left-width: 10px;
         background: linear-gradient(
           218.99deg,
           rgba(255, 255, 255, 0) 4.42%,
@@ -51,10 +51,20 @@
       }
       &.active {
         width: 200px;
-        border-left-width: 10px;
+        background: linear-gradient(
+          218.99deg,
+          rgba(255, 255, 255, 0) 4.42%,
+          rgba(255, 255, 255, 0.2) 85.6%
+        );
+        &.health {
+          background: linear-gradient(
+            218.99deg,
+            rgba(255, 255, 255, 0) 4.42%,
+            rgba(0, 255, 166, 0.5) 85.6%
+          );
+        }
       }
       &.health {
-        border-left-color: $contrast2;
         background: linear-gradient(
           218.99deg,
           rgba(255, 255, 255, 0) 4.42%,
@@ -71,6 +81,7 @@
       .navList {
         @include flex(column, center);
         padding: 5px 20px;
+        border-radius: $radius;
         .icon {
           width: 35px;
           height: 35px;
@@ -141,6 +152,8 @@
     $btnColor2,
     $btnColor1
   );
+  @include font();
+  font-weight: 700;
   background-size: 200%;
   border-radius: 2rem;
   border: 0px;

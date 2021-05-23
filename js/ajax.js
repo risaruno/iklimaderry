@@ -16,7 +16,6 @@ $("#wish-form")
       var spinner = "<span>Loading...</span>";
       var name = $("input#name").val();
       var msg = $("textarea#wish").val();
-      console.log("submit2");
       $.ajax({
         url: "send.php",
         method: "POST",

@@ -12677,26 +12677,29 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
   width: 120px;
   height: 75px;
-  border-left: 20px #dca958 solid;
+  border-radius: 10px;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
 #navigator ul li:hover {
+  border-radius: 10px;
   -webkit-transition: 500ms;
   transition: 500ms;
   width: 200px;
-  border-left-width: 10px;
   background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(255, 255, 255, 0.2) 85.6%);
 }
 
 #navigator ul li.active {
   width: 200px;
-  border-left-width: 10px;
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(255, 255, 255, 0.2) 85.6%);
+}
+
+#navigator ul li.active.health {
+  background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(0, 255, 166, 0.5) 85.6%);
 }
 
 #navigator ul li.health {
-  border-left-color: #00d88a;
   background: linear-gradient(218.99deg, rgba(255, 255, 255, 0) 4.42%, rgba(0, 255, 166, 0.2) 85.6%);
 }
 
@@ -12720,6 +12723,7 @@ readers do not read off random characters that represent icons */
           align-items: center;
   text-align: center;
   padding: 5px 20px;
+  border-radius: 10px;
 }
 
 #navigator ul li .navList .icon {
@@ -12813,6 +12817,8 @@ readers do not read off random characters that represent icons */
 .buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard #wish-form button {
   background-image: -webkit-gradient(linear, right top, left top, from(#2d9cdb), color-stop(#0945e0), to(#2d9cdb));
   background-image: linear-gradient(to left, #2d9cdb, #0945e0, #2d9cdb);
+  font-family: "Poppins";
+  font-weight: 700;
   background-size: 200%;
   border-radius: 2rem;
   border: 0px;
@@ -12821,6 +12827,24 @@ readers do not read off random characters that represent icons */
   padding: 0.5rem 2rem;
   -webkit-transition: 500ms;
   transition: 500ms;
+}
+
+@media (min-width: 1024px) {
+  .buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard #wish-form button {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard #wish-form button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .buttonBlueish, #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open, #wish > div .wishes .wishCard #wish-form button {
+    font-size: 14px;
+  }
 }
 
 .buttonBlueish:hover, #landing > .col #open:hover, #wish > div #landing > .pray #open:hover, #wish > div #landing > .wishes #open:hover, #wish > div .wishes .wishCard #wish-form button:hover {
@@ -12890,12 +12914,12 @@ readers do not read off random characters that represent icons */
   padding: 15px;
 }
 
-.scaleUp, #gallery > div .photos .photo, #footer a img {
+.scaleUp, #gallery > div .photos img, #footer a img {
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
-.scaleUp:hover, #gallery > div .photos .photo:hover, #footer a img:hover {
+.scaleUp:hover, #gallery > div .photos img:hover, #footer a img:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
@@ -12963,6 +12987,7 @@ a {
 html {
   background-color: #041b29;
   font-family: "Poppins";
+  color: white;
 }
 
 @media (min-width: 1024px) {
@@ -13082,29 +13107,9 @@ body {
 }
 
 #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open {
-  font-family: "Poppins";
-  font-weight: 700;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-@media (min-width: 1024px) {
-  #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-  #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  #landing > .col #open, #wish > div #landing > .pray #open, #wish > div #landing > .wishes #open {
-    font-size: 14px;
-  }
 }
 
 #landing > .col .coverName, #wish > div #landing > .pray .coverName, #wish > div #landing > .wishes .coverName {
@@ -13169,7 +13174,6 @@ body {
 
 #content > div,
 #landing {
-  color: white;
   z-index: 2;
   overflow-x: hidden;
 }
@@ -13648,7 +13652,6 @@ body {
 #date > div .resepsi .resepsiCard .body .dateIcons .dateIcon .desc {
   width: 80%;
   font-family: "Poppins";
-  padding-top: 5px;
   text-align: start;
   font-weight: 300;
   line-height: normal;
@@ -14118,25 +14121,10 @@ body {
   margin: 2vh 0;
 }
 
-#gallery > div .photos .photo {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  list-style-type: none;
-}
-
-#gallery > div .photos .photo > img {
-  width: 100%;
-  height: 100%;
+#gallery > div .photos img {
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: bottom;
-}
-
-#gallery > div .photos .photo:last-child {
-  -webkit-box-flex: 10;
-      -ms-flex-positive: 10;
-          flex-grow: 10;
 }
 
 #wish {
@@ -14273,7 +14261,7 @@ body {
           align-items: unset;
   text-align: center;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   padding: 10px 0;
 }
 
@@ -14326,9 +14314,7 @@ body {
 
 #wish > div .wishes .wishCard #wish-form button {
   width: 100%;
-  height: 40px;
-  padding: 0 10px;
-  border-radius: 10px;
+  height: 50px;
 }
 
 #wish > div .wishes .wishCard #wish-form .after-form {
@@ -14475,7 +14461,7 @@ body.loaded {
   #healthProtocols .col img, #healthProtocols #wish > div .pray img, #wish > div #healthProtocols .pray img, #healthProtocols #wish > div .wishes img, #wish > div #healthProtocols .wishes img {
     width: 30%;
   }
-  #gallery .photo {
+  #gallery img {
     width: 50%;
     height: 60vh;
   }
@@ -14505,7 +14491,7 @@ body.loaded {
   #healthProtocols .col img, #healthProtocols #wish > div .pray img, #wish > div #healthProtocols .pray img, #healthProtocols #wish > div .wishes img, #wish > div #healthProtocols .wishes img {
     width: 30%;
   }
-  #gallery .photo {
+  #gallery img {
     width: 50%;
     height: 50vh;
   }
@@ -14547,7 +14533,6 @@ body.loaded {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-top: 10px #dca958 solid;
     border-left: 0px;
   }
   #navigator ul li.health {
@@ -14562,12 +14547,10 @@ body.loaded {
   }
   #navigator ul li:hover {
     width: auto;
-    border-top-width: 5px;
     border-left: 0px;
   }
   #navigator ul li.active {
     width: auto;
-    border-top-width: 5px;
     border-left: 0px;
   }
   #cover > .col, #wish > div #cover > .pray, #wish > div #cover > .wishes {
@@ -14600,19 +14583,12 @@ body.loaded {
   #healthProtocols .col img, #healthProtocols #wish > div .pray img, #wish > div #healthProtocols .pray img, #healthProtocols #wish > div .wishes img, #wish > div #healthProtocols .wishes img {
     width: 40%;
   }
-  #gallery .photo {
-    width: 50%;
+  #gallery img {
+    width: 100%;
     height: 50vh;
   }
   #footer {
     margin-bottom: 10vh;
-  }
-}
-
-@media (max-width: 480px) {
-  #gallery .photo {
-    width: 100%;
-    height: 40vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
