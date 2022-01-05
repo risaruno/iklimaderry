@@ -99,7 +99,7 @@
           <div class="footCover">
             <div class="date">28 Mei 2021</div>
             <a
-              href="http://bit.ly/KalenderIklimaDerry"
+              href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M3U1OGpnYmgzcHJqZnNjZGg0MmxrMDB1dTQgbGY2dGEzMmtnZXVlNjV2cTN0ajVvaWVjaTBAZw&tmsrc=lf6ta32kgeue65vq3tj5oieci0%40group.calendar.google.com"
               target="_blank"
               class="saveDate"
               >Save The Date</a
@@ -231,7 +231,7 @@
             </div>
             <div class="buttons">
               <a
-                href="http://bit.ly/KalenderIklimaDerry"
+                href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M3U1OGpnYmgzcHJqZnNjZGg0MmxrMDB1dTQgbGY2dGEzMmtnZXVlNjV2cTN0ajVvaWVjaTBAZw&tmsrc=lf6ta32kgeue65vq3tj5oieci0%40group.calendar.google.com"
                 target="_blank"
                 class="saveDate"
                 >Save The Date</a
@@ -324,8 +324,8 @@
             <img src="./assets/img/VIS00485.JPG" alt="Gallery image 3" />
             <img src="./assets/img/VIS00505.JPG" alt="Gallery image 4" />
             <img src="./assets/img/VIS00568.JPG" alt="Gallery image 5" />
-            <img src="./assets/img/VIS00448.JPG" alt="Gallery image 6" />
-            <img src="./assets/img/VIS00445.JPG" alt="Gallery image 7" />
+            <img src="./assets/img/VIS00445.JPG" alt="Gallery image 6" />
+            <img src="./assets/img/VIS00448.JPG" alt="Gallery image 7" />
             <img src="./assets/img/VIS00470.JPG" alt="Gallery image 8" />
           </div>
         </div>

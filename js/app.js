@@ -9,6 +9,8 @@ load = () => {
   const vh = window.innerHeight;
   const bh = body.clientHeight;
 
+  var gallery = document.querySelectorAll(".photos > img");
+
   var audio = document.getElementById("audio");
   var aBtn = document.getElementById("audio-btn");
   var aIcon = document.getElementById("audio-icon");
@@ -19,6 +21,13 @@ load = () => {
     aBtn.style.opacity = 0;
     loader.classList.add("loaded");
     landing.classList.add("loaded");
+
+    //set 100% width for wider pictures
+    gallery.forEach((i) => {
+      if (i.offsetWidth > i.offsetHeight) {
+        i.classList.add("wide");
+      }
+    });
   }, 5000);
 
   // GUEST NAME
@@ -227,6 +236,7 @@ load = () => {
           trigger: t,
           start: "top 80%",
           ease: "power3.inOut",
+          markers: "true",
         },
       })
       .fromTo(
